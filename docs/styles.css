@@ -30,6 +30,9 @@
   .output {
     margin: 20px auto;
   }
+  .header {
+    text-align: center;
+  }
   
   label,
   legend {
@@ -91,4 +94,14 @@
   
   .deficit {
     color: var(--light-pink);
+  }
+  .image1 {
+    width: 100px;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    /*max-width: 100%;
+    height: auto;*/
   }
