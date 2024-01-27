@@ -95,7 +95,7 @@
   .deficit {
     color: var(--light-pink);
   }
-  .image2 {
+  .logo {
     width: 200px; /* Increased from 100px to 200px */
     height: auto;
     border: 2px solid black;
