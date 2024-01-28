@@ -1,3 +1,11 @@
+// Omar Darwish
+
+window.onload = function() {
+    if (localStorage.getItem('dailyCalories')) {
+        document.getElementById('budget').value = localStorage.getItem('dailyCalories');
+    }
+};
+
 const calorieCounter = document.getElementById('calorie-counter');
 const budgetNumberInput = document.getElementById('budget');
 const entryDropdown = document.getElementById('entry-dropdown');
@@ -49,8 +57,12 @@ function calculateCalories(e) {
   const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs);
   const budgetCalories = getCaloriesFromInputs([budgetNumberInput]);
 
+  document.getElementById('resultElement').innerText = calculatedValue;
+
   if (isError) {
     return;
+
+
   }
 
   const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
@@ -96,6 +108,15 @@ function clearForm() {
   output.classList.add('hide');
 }
 
-addEntryButton.addEventListener("click", addEntry);
-calorieCounter.addEventListener("submit", calculateCalories);
-clearButton.addEventListener("click", clearForm);
+document.getElementById('calorie-counter').addEventListener('submit', function(event) {
+    addEntryButton.addEventListener("click", addEntry);
+    calorieCounter.addEventListener("submit", calculateCalories);
+    document.getElementById('feedbackElement').innerText = 'Data saved successfully!';
+    localStorage.setItem('dailyCalories', document.getElementById('budget').value);
+});
+
+document.getElementById('clear').addEventListener('click', function() {
+    clearButton.addEventListener("click", clearForm);
+    localStorage.removeItem('dailyCalories');
+});
+
