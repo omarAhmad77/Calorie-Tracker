@@ -5,69 +5,81 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png"/>
     <title>Calorie Counter</title>
   </head>
   <body>
-    <!--<img class = "logo" src = "https://github.com/omarAhmad77/Calorie-Tracker/blob/main/docs/logo.png">-->
+    <header>
+      <img class="logo" src="https://github.com/omarAhmad77/Calorie-Tracker/tree/main/docs/Images/logo.png" alt="Calorie Tracker Logo">
+      <h1>My Calorie Secrets</h1>
+      <p>Track and Log your Caloric Intake!</p>
+    </header>
     <main>
-      <div class = "header">
-        <h1>My Calorie Secrets</h1>
-        <h3>Track and Log your Caloric Intake!<h3>
-        <hr class = "line-divider">
-      </div>
-      <div class="container">
-        <form id="calorie-counter">
-          <label for="budget">Budget</label>
-          <input
-            type="number"
-            min="0"
-            id="budget"
-            placeholder="Daily calorie budget"
-            required
-          />
-          <fieldset id="breakfast">
-            <legend>Breakfast</legend>
-            <div class="input-container"></div>
-          </fieldset>
-          <fieldset id="lunch">
-            <legend>Lunch</legend>
-            <div class="input-container"></div>
-          </fieldset>
-          <fieldset id="dinner">
-            <legend>Dinner</legend>
-            <div class="input-container"></div>
-          </fieldset>
-          <fieldset id="snacks">
-            <legend>Snacks</legend>
-            <div class="input-container"></div>
-          </fieldset>
-          <fieldset id="exercise">
-            <legend>Exercise</legend>
-            <div class="input-container"></div>
-          </fieldset>
-          <div class="controls">
-            <span>
-              <label for="entry-dropdown">Add food or exercise:</label>
-              <select id="entry-dropdown" name="options">
-                <option value="breakfast" selected>Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="snacks">Snacks</option>
-                <option value="exercise">Exercise</option>
-              </select>
-              <button type="button" id="add-entry">Add Entry</button>
-            </span>
+      <section class="calorie-tracker">
+        <form id="calorie-counter" aria-label="Calorie Counter">
+          <div class = "header">
+            <h1>My Calorie Secrets</h1>
+            <h3>Track and Log your Caloric Intake!<h3>
+            <hr class = "line-divider">
           </div>
-          <div>
-            <button type="submit">
-              Calculate Remaining Calories
-            </button>
-            <button type="button" id="clear">Clear</button>
+          <div class="container">
+            <form id="calorie-counter">
+              <label for="budget">Budget</label>
+              <input
+                type="number"
+                min="0"
+                id="budget"
+                placeholder="Daily calorie budget"
+                required
+              />
+              <fieldset id="breakfast">
+                <legend>Breakfast</legend>
+                <div class="input-container"></div>
+              </fieldset>
+              <fieldset id="lunch">
+                <legend>Lunch</legend>
+                <div class="input-container"></div>
+              </fieldset>
+              <fieldset id="dinner">
+                <legend>Dinner</legend>
+                <div class="input-container"></div>
+              </fieldset>
+              <fieldset id="snacks">
+                <legend>Snacks</legend>
+                <div class="input-container"></div>
+              </fieldset>
+              <fieldset id="exercise">
+                <legend>Exercise</legend>
+                <div class="input-container"></div>
+              </fieldset>
+              <div class="controls">
+                <span>
+                  <label for="entry-dropdown">Add food or exercise:</label>
+                  <select id="entry-dropdown" name="options">
+                    <option value="breakfast" selected>Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snacks">Snacks</option>
+                    <option value="exercise">Exercise</option>
+                  </select>
+                  <button type="button" id="add-entry">Add Entry</button>
+                </span>
+              </div>
+              <div>
+                <button type="submit">
+                  Calculate Remaining Calories
+                </button>
+                <button type="button" id="clear">Clear</button>
+              </div>
+            </form>
+            <div id="output" class="output hide"></div>
           </div>
         </form>
-        <div id="output" class="output hide"></div>
-      </div>
+      </section>
     </main>
+    <footer>
+      <p>Developed by: Omar Ahmad Darwish</p>
+    </footer>
     <script src="./script.js"></script>
   </body>
 </html>
